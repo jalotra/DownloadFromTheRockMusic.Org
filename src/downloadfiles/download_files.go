@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"time"
+	"github.com/cheggaaa/pb/v3"
 )
 
 // DownloadFile will download a url and store it in local filepath.
@@ -27,11 +28,17 @@ func DownloadFile(url string, filepath string) error {
 	}
 	defer resp.Body.Close()
 
+	// Writing code to start a Progress bar using the cheggaaa code
+	var fileSize int64 = resp.ContentLength
+	bar := pb.New(int(fileSize))
+	bar.Start()
+	rd := bar.NewProxyReader(resp.Body)
+	io.Copy(out, rd)
 	// Write the body to file
-	_, err = io.Copy(out, resp.Body)
-	if err != nil {
-		return err
-	}
+	// fileSize , err = io.Copy(out, resp.Body)
+	// if err != nil {
+	// 	return err
+	// }
 
 	endTime := time.Now()
 	fmt.Printf("This operation took %s \n", endTime.Sub(startTime).String())
