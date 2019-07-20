@@ -5,15 +5,30 @@ import (
 	"fmt"
 	"geturldata"
 	"os"
+	"parsethemusicmp3snames"
 )
 
-func parseWEBSITEADDRESS() {
-	geturldata.ReturnURLBODY(geturldata.DownloadWEBADDRESS())
+func parseWEBSITEADDRESS() string {
+
+	if len(os.Args) != 3 {
+		fmt.Println("usage: ./mainexecution therockmusic.orgAlbumURL foldername")
+		os.Exit(1)
+	}
+	// var Reader io.Reader
+	documentTree := geturldata.ReturnURLBODY(geturldata.DownloadWEBADDRESS())
+
+	return documentTree
+
+}
+
+func gettingAlbumTitles() {
+	parsethemusicmp3snames.ReturnAnchorTags(parsethemusicmp3snames.HTMLParser(parseWEBSITEADDRESS()))
+
 }
 
 func downloaderASSEMBLY() {
 	if len(os.Args) != 3 {
-		fmt.Println("usage: download url filename")
+		fmt.Println("usage: ./mainexecution therockmusic.orgAlbumURL foldername")
 		os.Exit(1)
 	}
 	url := os.Args[1]
@@ -36,6 +51,7 @@ func downloaderASSEMBLY() {
 }
 
 func main() {
-	// fmt.Println(geturldata.DownloadWEBADDRESS())
-	parseWEBSITEADDRESS()
+	fmt.Println(geturldata.DownloadWEBADDRESS())
+	// parseWEBSITEADDRESS()
+	gettingAlbumTitles()
 }
