@@ -11,7 +11,7 @@ import (
 // I am getting this /lib/media/music/http://therockmusic.org/albums/awakened-by-hope/index.html
 
 // ReturnURLBODY Prints what is present in the returned RootUrl WEbpage.
-func ReturnURLBODY(urltofinditscontents string) {
+func ReturnURLBODY(urltofinditscontents string) string {
 	response, error := http.Get(string(urltofinditscontents))
 	if error != nil {
 		log.Fatalln(error)
@@ -22,7 +22,8 @@ func ReturnURLBODY(urltofinditscontents string) {
 	if error != nil {
 		log.Fatalln(error)
 	}
-	log.Println(string(body))
+
+	return string(body)
 }
 
 // ParseWEBSITEADDRESS takes in websiteAddress and return the album name
@@ -45,7 +46,7 @@ func ParseWEBSITEADDRESS(websiteAddress string) string {
 func DownloadWEBADDRESS() string {
 	var rootURL string
 	rootURL = "http://therockmusic.org/lib/media/music/"
-	rootURL = rootURL + ParseWEBSITEADDRESS(os.Args[1])
+	rootURL = rootURL + ParseWEBSITEADDRESS(os.Args[1]) + "/"
 	//rootURL now becomes example :: http://therockmusic.org/lib/media/music/dwelling/
 
 	return rootURL
