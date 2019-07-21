@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"time"
+
 	"github.com/cheggaaa/pb/v3"
 )
 
@@ -29,11 +30,12 @@ func DownloadFile(url string, filepath string) error {
 	defer resp.Body.Close()
 
 	// Writing code to start a Progress bar using the cheggaaa code
-	var fileSize int64 = resp.ContentLength
+	var fileSize = resp.ContentLength
 	bar := pb.New(int(fileSize))
 	bar.Start()
 	rd := bar.NewProxyReader(resp.Body)
 	io.Copy(out, rd)
+	bar.Finish()
 	// Write the body to file
 	// fileSize , err = io.Copy(out, resp.Body)
 	// if err != nil {

@@ -21,17 +21,33 @@ func HTMLParser(response string) *html.Node {
 
 // var ReturnAnchorTags func(*html.Node)
 
+//MainList Previous error was not to define MainList as a global Variable
+//MainList exports all the mp3s in a list form
+var MainList []string
+
 //ReturnAnchorTags prints out the <a> tags from the parsed html document.
-func ReturnAnchorTags(n *html.Node) {
+func ReturnAnchorTags(n *html.Node) []string {
 	if n.Type == html.ElementNode && n.Data == "a" {
 		for _, a := range n.Attr {
 			if a.Key == "href" {
-				fmt.Println(a.Val)
-				break
+				// fmt.Println(a.Val)
+				MainList = append(MainList, a.Val)
+				// break
 			}
 		}
 	}
 	for c := n.FirstChild; c != nil; c = c.NextSibling {
 		ReturnAnchorTags(c)
+		// fmt.Print(c)
 	}
+
+	return MainList
 }
+
+// MainListManipulator exports all the mp3s in a list form
+// func MainListManipulator(n *html.Node) {
+// 	for c := n.FirstChild; c != nil; c = c.NextSibling {
+// 		ReturnAnchorTags(c)
+// 		fmt.Print(c)
+// 	}
+// }
