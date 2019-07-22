@@ -9,7 +9,7 @@ You can just download the precompiled binaries that I have build for Linux arm64
 ### Prerequisites
 
 For Running the compiled versions you don't need anything just a cli and a keyboard and ctrl c + ctrl v command putting will.
-For compiling the source code, you would need the go language ofcourse with some packages that I am not leaving to append later here,  
+For compiling the source code, you would need the go language ofcourse with some packages that I am leaving to append later here.  
 
 ```
 Give examples
@@ -25,13 +25,13 @@ Example : ./ForWindowsAmd64.exe http://therockmusic.org/albums/promises/index.ht
 
 ### Installing
 #Getting the precompiled binaries:
-open https://github.com/jalotra/DownloadFromTheRockMusic.Org.
-Point to ./src/PrecompiledBinaries/
-Make a folder to save the file. 
-Download the file according to your architecture and os.
-Run the command described above.
+1. open https://github.com/jalotra/DownloadFromTheRockMusic.Org.
+2. Point to ./src/PrecompiledBinaries/
+3. Make a folder to save the file. 
+4. Download the file according to your architecture and os.
+5. Run the command described above.
 
-If you run all these steps a *songs folder will be made in the ../ it will have the <--foldername> folder in it that will contain all your songs.Enjoy!!! 
+6. If you run all these steps a *songs folder will be made in the ../ it will have the <--foldername> folder in it that will contain all your songs.Enjoy!!! 
 
 
 ## Running the tests
@@ -41,7 +41,7 @@ Nothing written till now.
 
 ## Contributing
 
-Not wriiten but I would like to add a few features.
+Not written but I would like to add a few features.
 1. To print all the songs available and to download what songs that I like to download.
 2. Code-Review, because I started learning Go 3 DAYS back and this project is the staring stone.
 
@@ -58,5 +58,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * cheggaaa for his downloader. 
-* Inspiration was me/myself, also google for writing a great language. 
+* Inspiration was me/myself, also I thank google for writing a great language. 
 * Last but not the least, listen to this song to get into Go.Must Watch :: https://www.youtube.com/watch?v=LJvEIjRBSDA
