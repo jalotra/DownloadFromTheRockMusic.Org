@@ -31,7 +31,7 @@ Example : ./ForWindowsAmd64.exe http://therockmusic.org/albums/promises/index.ht
 4. Download the file according to your architecture and os.
 5. Run the command described above.
 
-6. If you run all these steps a *songs folder will be made in the ../ it will have the <--foldername> folder in it that will contain all your songs.Enjoy!!! 
+6. If you run all these steps a **songs** folder will be made in the **../** it will have the **<--foldername>** folder in it that will contain all your songs.Enjoy!!! 
 
 
 ## Running the tests
