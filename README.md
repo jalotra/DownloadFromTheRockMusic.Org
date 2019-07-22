@@ -26,7 +26,7 @@ Example : ./ForWindowsAmd64.exe http://therockmusic.org/albums/promises/index.ht
 ### Installing
 #Getting the precompiled binaries:
 1. open https://github.com/jalotra/DownloadFromTheRockMusic.Org.
-2. Point to ./src/PrecompiledBinaries/
+2. Point to ./PrecompiledBinaries/
 3. Make a folder to save the file. 
 4. Download the file according to your architecture and os.
 5. Run the command described above.
