@@ -1,4 +1,4 @@
-# Project Title
+# DownloadMusicFromtherockmusic.org
 
 This repository lets you to download all the songs that are present in therockmusic.org/albums/aAlbumName recursively and quite fast as the code is already compiled, written in golang it runs as fast as C++.
 
